@@ -36,6 +36,7 @@ const App = () => {
     const randomQuestion = questions[domain][Math.floor(Math.random() * questions[domain].length)];
     setQuestion(randomQuestion);
     setTimeLeft(30);
+    
     if (timerRef.current) clearInterval(timerRef.current);
     timerRef.current = setInterval(() => {
       setTimeLeft((prev) => {
@@ -66,22 +67,26 @@ const App = () => {
             textColors={["#ffffff"]}
           />
         </div>
-  
-        {/* Question Box - Only show if a question is available */}
-        {selectedDomain && question && (
-          <div className="question-box">
-            <h2>Category: {selectedDomain}</h2>
-            <p>{question.question}</p>
-            {!showAnswer ? (
-              <p className="timer">Time Left: {timeLeft}s</p>
-            ) : (
-              <p className="answer">Answer: {question.answer}</p>
-            )}
-          </div>
-        )}
+
+        {/* Always display question box */}
+        <div className="question-box">
+          {selectedDomain && question ? (
+            <>
+              <h2>Category: {selectedDomain}</h2>
+              <p>{question.question}</p>
+              {!showAnswer ? (
+                <p className="timer">Time Left: {timeLeft}s</p>
+              ) : (
+                <p className="answer">Answer: {question.answer}</p>
+              )}
+            </>
+          ) : (
+            <p className="default-message">Spin the wheel to get a question!</p>
+          )}
+        </div>
       </div>
     </div>
   );
-}  
+};
 
 export default App;

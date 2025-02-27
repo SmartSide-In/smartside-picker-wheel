@@ -61,16 +61,19 @@ body {
   background-color: #0f1017;
 }
 
-/* Move question box to the right of the wheel */
+/* Always show the question box */
 .question-box {
   background-color: white;
-  color: #0f1017;
+  color: #191a23;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: left;
-  width: 350px;
-  min-height: 150px;
+  width: 800px;
+  min-height: 470px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .timer {
@@ -81,4 +84,11 @@ body {
 .answer {
   color: green;
   font-weight: bold;
+}
+
+.default-message {
+  color: gray;
+  font-size: 1.1rem;
+  text-align: center;
+  font-style: italic;
 }
