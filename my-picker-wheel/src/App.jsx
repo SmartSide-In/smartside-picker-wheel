@@ -20,25 +20,33 @@ const App = () => {
   const [showAnswer, setShowAnswer] = useState(false);
   const [timeLeft, setTimeLeft] = useState(30);
   const timerRef = useRef(null);
-  const [setHasSpun] = useState(false);
+  const [ setHasSpun] = useState(false); // Fixed the state declaration
 
   const handleSpinClick = () => {
+    if (mustSpin) return; // Only prevent spinning while actively spinning
+  
     const newPrizeNumber = Math.floor(Math.random() * domains.length);
-    setPrizeNumber(newPrizeNumber);
+  
+    // Add extra rotations to ensure full spin
+    setPrizeNumber((prevPrize) => (prevPrize + newPrizeNumber + domains.length * 5) % domains.length);
+  
     setMustSpin(true);
     setSelectedDomain(null);
     setQuestion(null);
     setShowAnswer(false);
-    setHasSpun(true);
-  };
-
+    setHasSpun(true); // Track that we've spun the wheel
+  };  
+  
   const handleStop = () => {
+    setMustSpin(false); // Reset the spin state
+  
     const domain = domains[prizeNumber].option;
     setSelectedDomain(domain);
+    
     const randomQuestion = questions[domain][Math.floor(Math.random() * questions[domain].length)];
     setQuestion(randomQuestion);
     setTimeLeft(30);
-
+  
     if (timerRef.current) clearInterval(timerRef.current);
     timerRef.current = setInterval(() => {
       setTimeLeft((prev) => {
@@ -51,7 +59,7 @@ const App = () => {
       });
     }, 1000);
   };
-
+  
   // Get domain color
   const getDomainColor = (domain) => {
     const colorMap = {
@@ -87,7 +95,11 @@ const App = () => {
               innerBorderColor="#191a23"
               innerBorderWidth={2}
             />
-            <button className="spin-button" onClick={handleSpinClick}>
+            <button 
+              className="spin-button" 
+              onClick={handleSpinClick} 
+              disabled={mustSpin}
+            >
               {mustSpin ? "Spinning..." : "Spin"}
             </button>
           </div>
@@ -112,7 +124,10 @@ const App = () => {
                   {!showAnswer && (
                     <button
                       className="reveal-answer-button"
-                      onClick={() => setShowAnswer(true)}
+                      onClick={() => {
+                        setShowAnswer(true);
+                        clearInterval(timerRef.current); // Clear the timer
+                      }}
                     >
                       Reveal
                     </button>
@@ -144,12 +159,16 @@ const App = () => {
                     {/* Timer Text (Centered) */}
                     <p className="timer-text">{timeLeft}s</p>
                   </div>
-
-
                 ) : (
                   <div className="answer-container">
                     <h3>Answer:</h3>
                     <p className="answer-text">{question.answer}</p>
+                    <button 
+                      className="next-question-button" 
+                      onClick={handleSpinClick}
+                    >
+                      Next Question
+                    </button>
                   </div>
                 )}
               </div>
@@ -158,7 +177,6 @@ const App = () => {
             <div className="welcome-content">
               <div className="welcome-header">
                 <h2>Welcome to Tech Trivia!</h2>
-                {/* {hasSpun && <p className="loading-text">Loading your question...</p>} */}
               </div>
 
               <div className="instructions">
@@ -187,8 +205,6 @@ const App = () => {
             </div>
           )}
         </div>
-
-
       </div>
     </div>
   );
