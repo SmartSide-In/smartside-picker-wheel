@@ -15,6 +15,25 @@ body {
   padding: 20px;
 }
 
+/* Logo styling */
+.logo-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 175px; /* Adjust size as needed */
+  height: auto;
+}
+
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
 .title {
   color: #191a23;
   font-size: 2.5rem;
@@ -202,6 +221,24 @@ body {
   margin: 0;
 }
 
+/* Next question button */
+.next-question-button {
+  background-color: #4BC0C0;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+}
+
+.next-question-button:hover {
+  background-color: #3AA0A0;
+  transform: translateY(-2px);
+}
+
 /* Welcome content styling */
 .welcome-content {
   padding: 30px;
@@ -342,5 +379,10 @@ body {
     height: auto;
     min-height: 450px;
     margin-bottom: 30px;
+  }
+  
+  /* Make logo responsive */
+  .logo {
+    max-width: 120px;
   }
 }

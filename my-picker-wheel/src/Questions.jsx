@@ -36,7 +36,47 @@ const questions = {
     { question: "Which JavaScript framework is used for front-end development?", choices: ["React", "Django", "Flask", "Laravel"], answer: "React" },
     { question: "Which HTTP status code represents a successful request?", choices: ["200", "404", "500", "301"], answer: "200" },
     { question: "Which CSS property is used for flexbox layout?", choices: ["display", "position", "flex", "grid"], answer: "display" }
+  ],
+  
+  "Databases": [
+    { question: "Which SQL command is used to retrieve data from a database?", choices: ["SELECT", "INSERT", "UPDATE", "DELETE"], answer: "SELECT" },
+    { question: "What does ACID stand for in database transactions?", choices: ["Atomicity, Consistency, Isolation, Durability", "Accuracy, Concurrency, Integrity, Dependability", "Availability, Consistency, Integrity, Durability", "Access, Control, Integrity, Data"], answer: "Atomicity, Consistency, Isolation, Durability" },
+    { question: "Which of the following is a NoSQL database?", choices: ["MySQL", "PostgreSQL", "MongoDB", "Oracle"], answer: "MongoDB" },
+    { question: "Which SQL clause is used to filter records?", choices: ["WHERE", "HAVING", "ORDER BY", "GROUP BY"], answer: "WHERE" },
+    { question: "What type of database is best for handling large-scale key-value data?", choices: ["Relational", "Document-based", "Key-Value Store", "Graph"], answer: "Key-Value Store" },
+    { question: "What is the main function of an index in a database?", choices: ["Store data", "Speed up queries", "Encrypt records", "Maintain relationships"], answer: "Speed up queries" },
+    { question: "Which of the following is a primary key constraint in SQL?", choices: ["Ensures unique values", "Allows duplicate values", "Creates a foreign key", "Allows null values"], answer: "Ensures unique values" },
+    { question: "Which database model organizes data in tables with rows and columns?", choices: ["Document-based", "Graph", "Relational", "Key-Value"], answer: "Relational" },
+    { question: "Which SQL statement is used to remove a table from a database?", choices: ["DELETE", "DROP", "REMOVE", "TRUNCATE"], answer: "DROP" },
+    { question: "Which SQL join returns only matching rows from two tables?", choices: ["INNER JOIN", "LEFT JOIN", "RIGHT JOIN", "FULL JOIN"], answer: "INNER JOIN" }
+  ],
+
+  "Fun Facts": [
+    { question: "Which planet is known as the 'Red Planet'?", choices: ["Venus", "Mars", "Jupiter", "Saturn"], answer: "Mars" },
+    { question: "What is the tallest mountain in the world?", choices: ["K2", "Kilimanjaro", "Everest", "Denali"], answer: "Everest" },
+    { question: "Which animal is known for laughing?", choices: ["Hyena", "Dolphin", "Parrot", "Owl"], answer: "Hyena" },
+    { question: "What is the hardest natural substance on Earth?", choices: ["Gold", "Iron", "Diamond", "Platinum"], answer: "Diamond" },
+    { question: "Which country has the most pyramids?", choices: ["Egypt", "Mexico", "Sudan", "Peru"], answer: "Sudan" },
+    { question: "How many bones are in the human body?", choices: ["206", "215", "190", "250"], answer: "206" },
+    { question: "What is the fastest land animal?", choices: ["Cheetah", "Lion", "Horse", "Kangaroo"], answer: "Cheetah" },
+    { question: "Which fruit has its seeds on the outside?", choices: ["Strawberry", "Blueberry", "Banana", "Apple"], answer: "Strawberry" },
+    { question: "What is the only mammal capable of true flight?", choices: ["Squirrel", "Bat", "Pigeon", "Eagle"], answer: "Bat" },
+    { question: "Which ocean is the largest?", choices: ["Atlantic", "Indian", "Pacific", "Arctic"], answer: "Pacific" }
+  ],
+
+  "Cybersecurity": [
+    { question: "What does VPN stand for?", choices: ["Virtual Private Network", "Verified Protected Network", "Virtual Public Network", "Variable Private Node"], answer: "Virtual Private Network" },
+    { question: "Which type of attack involves tricking users into giving personal information?", choices: ["Phishing", "DDoS", "Ransomware", "SQL Injection"], answer: "Phishing" },
+    { question: "What does the 'S' in HTTPS stand for?", choices: ["Secure", "Server", "Standard", "Speed"], answer: "Secure" },
+    { question: "Which of the following is a strong password practice?", choices: ["Using common words", "Short passwords", "Including uppercase, lowercase, numbers, and symbols", "Using the same password everywhere"], answer: "Including uppercase, lowercase, numbers, and symbols" },
+    { question: "What does MFA stand for in cybersecurity?", choices: ["Multi-Factor Authentication", "Malware Filtering Access", "Main Firewall Application", "Multiple Firewall Alerts"], answer: "Multi-Factor Authentication" },
+    { question: "Which type of malware locks files and demands payment?", choices: ["Virus", "Trojan", "Spyware", "Ransomware"], answer: "Ransomware" },
+    { question: "Which protocol is used to encrypt internet communications?", choices: ["HTTP", "TCP", "SSL/TLS", "FTP"], answer: "SSL/TLS" },
+    { question: "Which of the following is a common social engineering attack?", choices: ["Brute force attack", "Phishing", "DDoS", "SQL Injection"], answer: "Phishing" },
+    { question: "Which cybersecurity measure prevents unauthorized network access?", choices: ["Firewall", "Antivirus", "VPN", "Password manager"], answer: "Firewall" },
+    { question: "What is the main purpose of encryption?", choices: ["Speed up data transfer", "Protect data by converting it into unreadable form", "Compress files", "Detect malware"], answer: "Protect data by converting it into unreadable form" }
   ]
 };
+
 
 export default questions;

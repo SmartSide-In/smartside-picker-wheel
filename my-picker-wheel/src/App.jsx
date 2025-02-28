@@ -3,6 +3,10 @@ import { Wheel } from "react-custom-roulette";
 import "./App.css";
 import questions from "./Questions";
 
+// Import your logo - you'll need to add your logo file to your project
+// For example in the src folder or public folder
+import logo from './assets/logo.png'; // Uncomment and update path
+
 const domains = [
   { option: "Python" },
   { option: "AI/ML" },
@@ -20,7 +24,7 @@ const App = () => {
   const [showAnswer, setShowAnswer] = useState(false);
   const [timeLeft, setTimeLeft] = useState(30);
   const timerRef = useRef(null);
-  const [ setHasSpun] = useState(false); // Fixed the state declaration
+  const [setHasSpun] = useState(false); // Fixed the state declaration
 
   const handleSpinClick = () => {
     if (mustSpin) return; // Only prevent spinning while actively spinning
@@ -75,6 +79,15 @@ const App = () => {
 
   return (
     <div className="container">
+      {/* Logo Container */}
+      <div className="logo-container">
+        {/* If using an imported logo: */}
+        <img src={logo} alt="Tech Trivia Logo" className="logo" />
+        
+        {/* Or if using a logo from public folder: */}
+        {/* <img src="/assets/logo.png" alt="Tech Trivia Logo" className="logo" /> */}
+      </div>
+
       <h1 className="title">Tech Trivia Wheel</h1>
 
       <div className="content">
