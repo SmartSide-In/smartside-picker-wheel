@@ -13,6 +13,7 @@ body {
   justify-content: flex-start;
   min-height: 100vh;
   padding: 20px;
+  margin-left: 100px; /* Moves the wheel to the right */
 }
 
 /* Logo styling */
